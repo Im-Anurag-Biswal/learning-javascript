@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Counter App</title>
+
+	<!-- styling the html layout -->
+	<style type="text/css">
+		*{margin: 0;
+			padding: 0;}
+		.container{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		#count{
+			font-size: 10rem;
+		}
+		.btn{
+			font-size: 1.5rem;
+			color: black;
+			padding: .5rem 1rem;
+		}
+	</style>
+
+</head>
+<body>
+
+	<!-- designing the basic html layout -->
+	<div class="container">
+		<label  id ="count">0</label>
+		<div class="controls">
+			<button class="btn" id="btn1" type="button">Decrease</button>
+			<button class="btn" id="btn2" type="button">Reset</button>
+			<button class="btn" id="btn3" type="button">Increase</button>
+		</div>
+	</div>
+
+
+	<!-- writing the javascript code. -->
+	<script type="text/javascript">
+
+		//getting the label element.
+		var lab = document.getElementById("count");
+
+		//getting the buttons in an class array.
+		var btns = document.getElementsByClassName("btn");
+
+		//assigning the buttons with respective functions.
+		btns[0].onclick = function (){
+			lab.innerText -=1;
+		}
+		btns[1].onclick = function (){
+			lab.innerText = 0;
+		}
+		btns[2].onclick = function (){
+			lab.innerText = Number(lab.innerText) +1;
+
+		}
+	</script>
+</body>
+</html>
